@@ -315,14 +315,6 @@ h3 {
   margin-top: var(--space-6);
 }
 
-.hero-email {
-  margin: var(--space-4) 0 0;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
-  font-size: 0.9375rem;
-  color: var(--text-muted);
-  word-break: break-all;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
