@@ -3,6 +3,9 @@
   var toggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
 
+  var y = document.getElementById("y");
+  if (y) y.textContent = String(new Date().getFullYear());
+
   function onScroll() {
     if (!header) return;
     if (window.scrollY > 24) header.classList.add("is-scrolled");
