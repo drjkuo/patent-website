@@ -1,0 +1,21 @@
+# Secrets & local env (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*~
+
+# If you add a build toolchain later
+node_modules/
+dist/
+.cache/
