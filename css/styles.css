@@ -474,27 +474,12 @@ h3 {
   margin-top: 1rem;
 }
 
-.contact-lead {
-  margin-bottom: 1rem;
-}
-
-.contact-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.75rem;
-}
-
-.contact-hint {
-  margin: 0;
-}
-
-.contact-email-line {
-  margin: 0;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
-  font-size: 0.9375rem;
+.footer-intake {
+  max-width: 52ch;
+  margin: var(--space-4) auto 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: var(--text-muted);
-  word-break: break-all;
 }
 
 .list-workflow {
