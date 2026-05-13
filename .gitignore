@@ -1,5 +1,6 @@
 # Agent skills / local tooling (installed via npx skills, etc.)
 .agents/
+skills-lock.json
 
 # Secrets & local env (never commit)
 .env
