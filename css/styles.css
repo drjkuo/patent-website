@@ -258,6 +258,10 @@ a:hover {
     align-items: center;
     border-radius: 6px;
   }
+
+  #brand-splash {
+    display: none;
+  }
 }
 
 main > section.brand-splash {
@@ -357,6 +361,12 @@ h1 {
   #hero-heading {
     white-space: nowrap;
   }
+}
+
+main section:not(#hero) .section-inner > h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
 }
 
 h2 {
