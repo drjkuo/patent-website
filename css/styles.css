@@ -266,7 +266,7 @@ main > section.brand-splash {
 }
 
 .brand-splash__inner {
-  min-height: min(90vh, 52rem);
+  min-height: min(95vh, 55rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
