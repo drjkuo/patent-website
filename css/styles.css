@@ -27,6 +27,7 @@
   --space-5: 1.25rem;
   --space-6: 1.5rem;
   --section-pad-y: clamp(3.25rem, 6vw, 5rem);
+  --section-pad-x: clamp(1.25rem, 10vw, 6rem);
   --header-h: 3.75rem;
   --tap-min: 44px;
   --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
@@ -121,7 +122,7 @@ a:hover {
 .header-inner {
   width: 100%;
   margin: 0 auto;
-  padding: var(--space-3) var(--space-5);
+  padding: var(--space-3) var(--section-pad-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -240,7 +241,7 @@ a:hover {
     top: 100%;
     flex-direction: column;
     align-items: stretch;
-    padding: 1rem 1.25rem 1.25rem;
+    padding: 1rem var(--section-pad-x) 1.25rem;
     background: var(--bg-elevated);
     border-bottom: 1px solid var(--border);
     gap: 0.75rem;
@@ -266,13 +267,14 @@ main > section.brand-splash {
 }
 
 .brand-splash__inner {
+  --splash-line-size: calc(0.9 * clamp(3.25rem, 13vw, 9.375rem));
   min-height: min(95vh, 55rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   box-sizing: border-box;
-  padding: clamp(3rem, 10vh, 6rem) clamp(1.25rem, 10vw, 6rem) clamp(2.5rem, 8vh, 4.5rem);
+  padding: clamp(3rem, 10vh, 6rem) var(--section-pad-x) clamp(2.5rem, 8vh, 4.5rem);
   background: var(--tif-green);
   color: #000;
 }
@@ -286,16 +288,17 @@ main > section.brand-splash {
 }
 
 .brand-splash__line--1 {
-  font-size: clamp(2.75rem, 11vw, 7.5rem);
+  font-size: calc(1.2 * var(--splash-line-size));
 }
 
 .brand-splash__line--2 {
-  font-size: clamp(3.25rem, 13vw, 9.375rem);
+  font-size: var(--splash-line-size);
+  margin-top: clamp(0.75rem, 2vw, 1.75rem);
 }
 
 main section {
   scroll-margin-top: calc(var(--header-h) + var(--space-3));
-  padding: var(--section-pad-y) var(--space-5);
+  padding: var(--section-pad-y) var(--section-pad-x);
   border-bottom: 1px solid var(--border);
 }
 
@@ -596,7 +599,7 @@ h3 {
 }
 
 .site-footer {
-  padding: var(--space-6) var(--space-5) 3rem;
+  padding: var(--space-6) var(--section-pad-x) 3rem;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
