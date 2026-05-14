@@ -14,12 +14,12 @@
   --accent-muted: rgba(13, 148, 136, 0.12);
   --accent-border: rgba(13, 148, 136, 0.32);
   --gold: #9a6700;
+  --tif-green: #81d8d0;
   --border: rgba(20, 24, 38, 0.1);
   --border-strong: rgba(20, 24, 38, 0.14);
   --shadow-sm: 0 1px 2px rgba(20, 24, 38, 0.06);
   --shadow-md: 0 10px 40px rgba(20, 24, 38, 0.08);
   --text-on-accent: #ffffff;
-  --max: 1080px;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -31,6 +31,7 @@
   --tap-min: 44px;
   --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
   --font-display: "Fraunces", Georgia, serif;
+  --font-brand: "Barlow Condensed", "Arial Narrow", "Helvetica Condensed", system-ui, sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -118,7 +119,7 @@ a:hover {
 }
 
 .header-inner {
-  max-width: var(--max);
+  width: 100%;
   margin: 0 auto;
   padding: var(--space-3) var(--space-5);
   display: flex;
@@ -129,12 +130,16 @@ a:hover {
 }
 
 .brand {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text);
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand:hover {
@@ -181,8 +186,10 @@ a:hover {
 .nav a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.75rem;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .nav a:hover {
@@ -204,6 +211,9 @@ a:hover {
   align-items: center;
   border-radius: 999px;
   font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   text-decoration: none !important;
 }
 
@@ -249,6 +259,40 @@ a:hover {
   }
 }
 
+main > section.brand-splash {
+  padding: 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(20, 24, 38, 0.18);
+}
+
+.brand-splash__inner {
+  min-height: min(90vh, 52rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: clamp(3rem, 10vh, 6rem) clamp(1.25rem, 10vw, 6rem) clamp(2.5rem, 8vh, 4.5rem);
+  background: var(--tif-green);
+  color: #000;
+}
+
+.brand-splash__line {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+.brand-splash__line--1 {
+  font-size: clamp(2.75rem, 11vw, 7.5rem);
+}
+
+.brand-splash__line--2 {
+  font-size: clamp(3.25rem, 13vw, 9.375rem);
+}
+
 main section {
   scroll-margin-top: calc(var(--header-h) + var(--space-3));
   padding: var(--section-pad-y) var(--space-5);
@@ -271,8 +315,20 @@ main section:nth-child(even) {
   background: linear-gradient(180deg, rgba(13, 148, 136, 0.06) 0%, transparent 72%);
 }
 
+#hero .section-inner {
+  width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  #hero .section-inner {
+    width: 50%;
+  }
+}
+
 .section-inner {
-  max-width: var(--max);
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -317,7 +373,7 @@ h3 {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--text-soft);
-  max-width: 68ch;
+  width: 100%;
   margin: 0 0 1.5rem;
 }
 
@@ -397,42 +453,6 @@ h3 {
   background: var(--accent-muted);
 }
 
-.hero-standfirst {
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-  font-weight: 500;
-  color: var(--text-soft);
-  max-width: 58ch;
-  margin: 0 0 1rem;
-  line-height: 1.5;
-}
-
-.hero-boundary {
-  margin: 1.5rem 0 0;
-  padding: 1rem 1.15rem;
-  max-width: 62ch;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-  background: var(--accent-muted);
-  border: 1px solid var(--accent-border);
-  border-radius: 10px;
-}
-
-.hero-boundary strong {
-  color: var(--text);
-}
-
-.slogan {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  color: var(--gold);
-  margin: 1.75rem 0 0;
-  max-width: 42ch;
-  line-height: 1.45;
-}
-
 .grid-2 {
   display: grid;
   gap: 2rem;
@@ -490,7 +510,7 @@ h3 {
 }
 
 .footer-intake {
-  max-width: 52ch;
+  width: 100%;
   margin: var(--space-4) auto 0;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -543,7 +563,7 @@ h3 {
 }
 
 .hero-actions .btn-primary {
-  max-width: 100%;
+  min-width: 0;
   word-break: break-word;
 }
 
